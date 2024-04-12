@@ -718,6 +718,10 @@ class Transformer:
             return UnaryAdd(node, lineno=elt[2])
         elif t == token.MINUS:
             return UnarySub(node, lineno=elt[2])
+        elif t == token.DOUBLEPLUS:
+            return UnaryAdd(1, lineno=elt[2])
+        elif t == token.DOUBLEMINUS:
+            return UnarySub(1, lineno=elt[2])
         elif t == token.TILDE:
             node = Invert(node, lineno=elt[2])
         return node
